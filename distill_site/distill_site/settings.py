@@ -116,5 +116,7 @@ try:
     from .local_settings import *
 except ImportError as e:
     import sys
-    sys.stdout.write(f'Failed to import from local_settings.py: {e}\n')
-    sys.exit(1)
+    # If local_settings.py doesn't exist, set defaults
+    GITHUB_USERNAME = ''
+    GITHUB_ACCESS_TOKEN = ''
+    sys.stdout.write(f'Note: local_settings.py not found, using defaults\n')
