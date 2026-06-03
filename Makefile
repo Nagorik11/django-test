@@ -6,13 +6,14 @@ dev:
 
 
 build:
-	touch distill_site/distill_site/local_settings.py
-	mkdir -p docs
+	@echo "GITHUB_USERNAME = ''" > distill_site/distill_site/local_settings.py
+	@echo "GITHUB_ACCESS_TOKEN = ''" >> distill_site/distill_site/local_settings.py
+	mkdir -p public
 	mkdir -p distill_site/media
 	mkdir -p distill_site/static
 	pipenv run distill_site/manage.py collectstatic --noinput
-	pipenv run distill_site/manage.py distill-local --force docs
-	cp -av distill_site/media docs/media
+	pipenv run distill_site/manage.py distill-local --force public
+	[ -d distill_site/media ] && cp -av distill_site/media public/media || true
 
 
 clean:
