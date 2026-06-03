@@ -12,6 +12,7 @@ Your Django Site
     └── Email, analytics, etc.
 ```
 
+
 ## Deployment Process
 
 ### Step 1: Build Static Site
