@@ -132,3 +132,10 @@ dmypy.json
 # Project
 /distill_site/static
 /docs
+/public
+
+# Cloudflare & Node
+node_modules/
+dist/
+.wrangler/
+*.wrangler.toml.bak

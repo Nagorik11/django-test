@@ -1,0 +1,16 @@
+# Cloudflare Pages + Workers Hybrid Configuration
+name = "django-distill-hybrid"
+type = "javascript"
+account_id = "YOUR_ACCOUNT_ID"
+workers_dev = true
+main = "src/index.js"
+compatibility_date = "2026-06-02"
+
+# For Pages static site
+[build]
+command = "cd distill_site && pipenv install && pipenv run python manage.py distill-local ../public --collectstatic --force"
+cwd = "./"
+
+[env.production]
+route = "example.com/*"
+zone_id = "YOUR_ZONE_ID"
