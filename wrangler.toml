@@ -1,7 +1,7 @@
 # Cloudflare Workers Configuration
 # This is for deploying Functions/APIs only
 name = "django-test"
-account_id = "YOUR_ACCOUNT_ID"
+account_id = "406d4584ac6c0f801ab91df2df3797be"
 workers_dev = true
 main = "src/index.js"
 compatibility_date = "2026-06-02"
