@@ -3,11 +3,11 @@ set -e
 
 echo "Installing Python dependencies..."
 pip install pipenv
-cd distill_site
-pipenv install
 
 echo "Building static site..."
-pipenv run python manage.py distill-local ../public --collectstatic --force
+pipenv install
+pipenv run python distill_site/manage.py collectstatic --noinput
+pipenv run python distill_site/manage.py distill-local --force public
 
 echo "Build complete!"
-ls -la ../public | head -20
+ls -la public | head -20
