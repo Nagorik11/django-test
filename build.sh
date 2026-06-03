@@ -1,9 +1,10 @@
 #!/bin/bash
 set -e
 
+apt-get update
+apt-get install -y --no-install-recommends libsqlite3-dev
 echo "Installing Python dependencies..."
 pip install pipenv
-pip install pysqlite3-binary
 
 echo "Setting up Django environment..."
 cd distill_site
