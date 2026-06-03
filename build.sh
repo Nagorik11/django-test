@@ -3,7 +3,7 @@ set -e
 
 echo "Installing Python dependencies..."
 pip install pipenv
-
+pip install sqlite3
 echo "Setting up Django environment..."
 cd distill_site
 
